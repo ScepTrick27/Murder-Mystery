@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21645E072C21FB9900C8DCDE /* MapBrainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E062C21FB9900C8DCDE /* MapBrainApp.swift */; };
+		21645E092C21FB9900C8DCDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E082C21FB9900C8DCDE /* ContentView.swift */; };
+		21645E0B2C21FB9B00C8DCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21645E0A2C21FB9B00C8DCDE /* Assets.xcassets */; };
+		21645E0E2C21FB9B00C8DCDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21645E0D2C21FB9B00C8DCDE /* Preview Assets.xcassets */; };
+		21645E182C21FB9B00C8DCDE /* MapBrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E172C21FB9B00C8DCDE /* MapBrainTests.swift */; };
+		21645E222C21FB9B00C8DCDE /* MapBrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E212C21FB9B00C8DCDE /* MapBrainUITests.swift */; };
+		21645E242C21FB9B00C8DCDE /* MapBrainUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E232C21FB9B00C8DCDE /* MapBrainUITestsLaunchTests.swift */; };
+		21645E312C21FBBD00C8DCDE /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E302C21FBBD00C8DCDE /* NodeView.swift */; };
+		21645E332C21FBD200C8DCDE /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E322C21FBD200C8DCDE /* PuzzleView.swift */; };
+		21645E352C23082C00C8DCDE /* BrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E342C23082C00C8DCDE /* BrainView.swift */; };
+		21645E372C2309C100C8DCDE /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E362C2309C100C8DCDE /* IndexView.swift */; };
+		21645E392C2462A900C8DCDE /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E382C2462A900C8DCDE /* ColorExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21645E142C21FB9B00C8DCDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21645DFB2C21FB9900C8DCDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21645E022C21FB9900C8DCDE;
+			remoteInfo = MapBrain;
+		};
+		21645E1E2C21FB9B00C8DCDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21645DFB2C21FB9900C8DCDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21645E022C21FB9900C8DCDE;
+			remoteInfo = MapBrain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21645E032C21FB9900C8DCDE /* MapBrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21645E062C21FB9900C8DCDE /* MapBrainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBrainApp.swift; sourceTree = "<group>"; };
+		21645E082C21FB9900C8DCDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		21645E0A2C21FB9B00C8DCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21645E0D2C21FB9B00C8DCDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		21645E132C21FB9B00C8DCDE /* MapBrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapBrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21645E172C21FB9B00C8DCDE /* MapBrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBrainTests.swift; sourceTree = "<group>"; };
+		21645E1D2C21FB9B00C8DCDE /* MapBrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapBrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21645E212C21FB9B00C8DCDE /* MapBrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBrainUITests.swift; sourceTree = "<group>"; };
+		21645E232C21FB9B00C8DCDE /* MapBrainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBrainUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21645E302C21FBBD00C8DCDE /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
+		21645E322C21FBD200C8DCDE /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		21645E342C23082C00C8DCDE /* BrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainView.swift; sourceTree = "<group>"; };
+		21645E362C2309C100C8DCDE /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
+		21645E382C2462A900C8DCDE /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		21645E3B2C247A4500C8DCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		21645E442C248BF100C8DCDE /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		21645E452C248BF100C8DCDE /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Regular.ttf"; sourceTree = "<group>"; };
+		21645E462C248BF100C8DCDE /* Orbitron-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-SemiBold.ttf"; sourceTree = "<group>"; };
+		21645E472C248BF100C8DCDE /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		21645E482C248BF100C8DCDE /* Orbitron-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-ExtraBold.ttf"; sourceTree = "<group>"; };
+		21645E492C248BF100C8DCDE /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Black.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21645E002C21FB9900C8DCDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E102C21FB9B00C8DCDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E1A2C21FB9B00C8DCDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21645DFA2C21FB9900C8DCDE = {
+			isa = PBXGroup;
+			children = (
+				21645E052C21FB9900C8DCDE /* MapBrain */,
+				21645E162C21FB9B00C8DCDE /* MapBrainTests */,
+				21645E202C21FB9B00C8DCDE /* MapBrainUITests */,
+				21645E042C21FB9900C8DCDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21645E042C21FB9900C8DCDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21645E032C21FB9900C8DCDE /* MapBrain.app */,
+				21645E132C21FB9B00C8DCDE /* MapBrainTests.xctest */,
+				21645E1D2C21FB9B00C8DCDE /* MapBrainUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21645E052C21FB9900C8DCDE /* MapBrain */ = {
+			isa = PBXGroup;
+			children = (
+				21645E3B2C247A4500C8DCDE /* Info.plist */,
+				21645E432C247E8D00C8DCDE /* Orbitron Font */,
+				21645E062C21FB9900C8DCDE /* MapBrainApp.swift */,
+				21645E082C21FB9900C8DCDE /* ContentView.swift */,
+				21645E382C2462A900C8DCDE /* ColorExtensions.swift */,
+				21645E342C23082C00C8DCDE /* BrainView.swift */,
+				21645E362C2309C100C8DCDE /* IndexView.swift */,
+				21645E302C21FBBD00C8DCDE /* NodeView.swift */,
+				21645E322C21FBD200C8DCDE /* PuzzleView.swift */,
+				21645E0A2C21FB9B00C8DCDE /* Assets.xcassets */,
+				21645E0C2C21FB9B00C8DCDE /* Preview Content */,
+			);
+			path = MapBrain;
+			sourceTree = "<group>";
+		};
+		21645E0C2C21FB9B00C8DCDE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				21645E0D2C21FB9B00C8DCDE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		21645E162C21FB9B00C8DCDE /* MapBrainTests */ = {
+			isa = PBXGroup;
+			children = (
+				21645E172C21FB9B00C8DCDE /* MapBrainTests.swift */,
+			);
+			path = MapBrainTests;
+			sourceTree = "<group>";
+		};
+		21645E202C21FB9B00C8DCDE /* MapBrainUITests */ = {
+			isa = PBXGroup;
+			children = (
+				21645E212C21FB9B00C8DCDE /* MapBrainUITests.swift */,
+				21645E232C21FB9B00C8DCDE /* MapBrainUITestsLaunchTests.swift */,
+			);
+			path = MapBrainUITests;
+			sourceTree = "<group>";
+		};
+		21645E432C247E8D00C8DCDE /* Orbitron Font */ = {
+			isa = PBXGroup;
+			children = (
+				21645E492C248BF100C8DCDE /* Orbitron-Black.ttf */,
+				21645E442C248BF100C8DCDE /* Orbitron-Bold.ttf */,
+				21645E482C248BF100C8DCDE /* Orbitron-ExtraBold.ttf */,
+				21645E472C248BF100C8DCDE /* Orbitron-Medium.ttf */,
+				21645E452C248BF100C8DCDE /* Orbitron-Regular.ttf */,
+				21645E462C248BF100C8DCDE /* Orbitron-SemiBold.ttf */,
+			);
+			path = "Orbitron Font";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21645E022C21FB9900C8DCDE /* MapBrain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21645E272C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrain" */;
+			buildPhases = (
+				21645DFF2C21FB9900C8DCDE /* Sources */,
+				21645E002C21FB9900C8DCDE /* Frameworks */,
+				21645E012C21FB9900C8DCDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapBrain;
+			productName = MapBrain;
+			productReference = 21645E032C21FB9900C8DCDE /* MapBrain.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21645E122C21FB9B00C8DCDE /* MapBrainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21645E2A2C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrainTests" */;
+			buildPhases = (
+				21645E0F2C21FB9B00C8DCDE /* Sources */,
+				21645E102C21FB9B00C8DCDE /* Frameworks */,
+				21645E112C21FB9B00C8DCDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21645E152C21FB9B00C8DCDE /* PBXTargetDependency */,
+			);
+			name = MapBrainTests;
+			productName = MapBrainTests;
+			productReference = 21645E132C21FB9B00C8DCDE /* MapBrainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21645E1C2C21FB9B00C8DCDE /* MapBrainUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21645E2D2C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrainUITests" */;
+			buildPhases = (
+				21645E192C21FB9B00C8DCDE /* Sources */,
+				21645E1A2C21FB9B00C8DCDE /* Frameworks */,
+				21645E1B2C21FB9B00C8DCDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21645E1F2C21FB9B00C8DCDE /* PBXTargetDependency */,
+			);
+			name = MapBrainUITests;
+			productName = MapBrainUITests;
+			productReference = 21645E1D2C21FB9B00C8DCDE /* MapBrainUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21645DFB2C21FB9900C8DCDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					21645E022C21FB9900C8DCDE = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					21645E122C21FB9B00C8DCDE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 21645E022C21FB9900C8DCDE;
+					};
+					21645E1C2C21FB9B00C8DCDE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 21645E022C21FB9900C8DCDE;
+					};
+				};
+			};
+			buildConfigurationList = 21645DFE2C21FB9900C8DCDE /* Build configuration list for PBXProject "MapBrain" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21645DFA2C21FB9900C8DCDE;
+			productRefGroup = 21645E042C21FB9900C8DCDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21645E022C21FB9900C8DCDE /* MapBrain */,
+				21645E122C21FB9B00C8DCDE /* MapBrainTests */,
+				21645E1C2C21FB9B00C8DCDE /* MapBrainUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21645E012C21FB9900C8DCDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21645E0E2C21FB9B00C8DCDE /* Preview Assets.xcassets in Resources */,
+				21645E0B2C21FB9B00C8DCDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E112C21FB9B00C8DCDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E1B2C21FB9B00C8DCDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21645DFF2C21FB9900C8DCDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21645E332C21FBD200C8DCDE /* PuzzleView.swift in Sources */,
+				21645E372C2309C100C8DCDE /* IndexView.swift in Sources */,
+				21645E092C21FB9900C8DCDE /* ContentView.swift in Sources */,
+				21645E392C2462A900C8DCDE /* ColorExtensions.swift in Sources */,
+				21645E072C21FB9900C8DCDE /* MapBrainApp.swift in Sources */,
+				21645E352C23082C00C8DCDE /* BrainView.swift in Sources */,
+				21645E312C21FBBD00C8DCDE /* NodeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E0F2C21FB9B00C8DCDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21645E182C21FB9B00C8DCDE /* MapBrainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21645E192C21FB9B00C8DCDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21645E242C21FB9B00C8DCDE /* MapBrainUITestsLaunchTests.swift in Sources */,
+				21645E222C21FB9B00C8DCDE /* MapBrainUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21645E152C21FB9B00C8DCDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21645E022C21FB9900C8DCDE /* MapBrain */;
+			targetProxy = 21645E142C21FB9B00C8DCDE /* PBXContainerItemProxy */;
+		};
+		21645E1F2C21FB9B00C8DCDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21645E022C21FB9900C8DCDE /* MapBrain */;
+			targetProxy = 21645E1E2C21FB9B00C8DCDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21645E252C21FB9B00C8DCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21645E262C21FB9B00C8DCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21645E282C21FB9B00C8DCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapBrain/Preview Content\"";
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBrain/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21645E292C21FB9B00C8DCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapBrain/Preview Content\"";
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapBrain/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		21645E2B2C21FB9B00C8DCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapBrain.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MapBrain";
+			};
+			name = Debug;
+		};
+		21645E2C2C21FB9B00C8DCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapBrain.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MapBrain";
+			};
+			name = Release;
+		};
+		21645E2E2C21FB9B00C8DCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MapBrain;
+			};
+			name = Debug;
+		};
+		21645E2F2C21FB9B00C8DCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2284P44Z6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.applesamplecode.MapBrainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MapBrain;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21645DFE2C21FB9900C8DCDE /* Build configuration list for PBXProject "MapBrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21645E252C21FB9B00C8DCDE /* Debug */,
+				21645E262C21FB9B00C8DCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21645E272C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21645E282C21FB9B00C8DCDE /* Debug */,
+				21645E292C21FB9B00C8DCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21645E2A2C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21645E2B2C21FB9B00C8DCDE /* Debug */,
+				21645E2C2C21FB9B00C8DCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21645E2D2C21FB9B00C8DCDE /* Build configuration list for PBXNativeTarget "MapBrainUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21645E2E2C21FB9B00C8DCDE /* Debug */,
+				21645E2F2C21FB9B00C8DCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21645DFB2C21FB9900C8DCDE /* Project object */;
+}
