@@ -11,6 +11,8 @@ struct SelectedNode: Identifiable {
 }
 
 struct BrainView: View {
+    
+    @Binding var selectedGroup: Int?
     @State private var nodes: [NodeModel] = [
         // Central nodes
         NodeModel(position: CGPoint(x: 550, y: 520), size: 120, group: 2), // Center Left
@@ -188,97 +190,98 @@ struct BrainView: View {
         Connection(startIndex: 9, endIndex: 48),
     ]
     
-    @State private var selectedGroup: Int? = nil
+    
     @State private var selectedNode: SelectedNode? = nil
         
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                // Draw connections
-                ForEach(connections) { connection in
-                    if connection.startIndex < nodes.count && connection.endIndex < nodes.count {
-                        Path { path in
-                            let start = nodes[connection.startIndex].position
-                            let end = nodes[connection.endIndex].position
-                            path.move(to: start)
-                            path.addLine(to: end)
+            GeometryReader { geometry in
+                ZStack {
+                    // Draw connections
+                    ForEach(connections) { connection in
+                        if connection.startIndex < nodes.count && connection.endIndex < nodes.count {
+                            Path { path in
+                                let start = nodes[connection.startIndex].position
+                                let end = nodes[connection.endIndex].position
+                                path.move(to: start)
+                                path.addLine(to: end)
+                            }
+                            .stroke(connectionColor(connection: connection), lineWidth: 2)
+                            .onTapGesture {
+                                if let group = connection.group {
+                                    selectedGroup = group
+                                    highlightGroup(group)
+                                }
+                            }
                         }
-                        .stroke(connectionColor(connection: connection), lineWidth: 2)
-                        .onTapGesture {
-                            if let group = connection.group {
+                    }
+
+                    // Draw nodes
+                    ForEach(nodes.indices, id: \.self) { index in
+                        NodeView(node: nodes[index], selectedGroup: selectedGroup) {
+                            if let group = nodes[index].group {
                                 selectedGroup = group
                                 highlightGroup(group)
                             }
                         }
+                        .position(nodes[index].position)
                     }
                 }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+            }
+        }
 
-                // Draw nodes
-                ForEach(nodes.indices, id: \.self) { index in
-                    NodeView(node: nodes[index], selectedGroup: selectedGroup) {
-                        if let group = nodes[index].group {
-                            selectedGroup = group
-                            highlightGroup(group)
-                        }
-                    }
-                    .position(nodes[index].position)
+        // Function to determine the color of a connection based on its state
+        private func connectionColor(connection: Connection) -> Color {
+            if let group = selectedGroup {
+                return connection.group == group ? .blue : Color(hex: "#7C8C98")
+            } else {
+                return connection.color
+            }
+        }
+
+        // Function to highlight all nodes and connections in the selected group
+        private func highlightGroup(_ group: Int) {
+            // First, reset all highlights
+            for i in 0..<nodes.count {
+                nodes[i].highlighted = false
+            }
+            for i in 0..<connections.count {
+                connections[i].highlighted = false
+            }
+
+            // Then, highlight the selected group
+            for i in 0..<nodes.count {
+                if nodes[i].group == group {
+                    nodes[i].highlighted = true
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-        }
-    }
-
-    // Function to determine the color of a connection based on its state
-    private func connectionColor(connection: Connection) -> Color {
-        if let group = selectedGroup {
-            return connection.group == group ? .blue : Color(hex: "#7C8C98")
-        } else {
-            return connection.color
-        }
-    }
-
-    // Function to highlight all nodes and connections in the selected group
-    private func highlightGroup(_ group: Int) {
-        // First, reset all highlights
-        for i in 0..<nodes.count {
-            nodes[i].highlighted = false
-        }
-        for i in 0..<connections.count {
-            connections[i].highlighted = false
-        }
-
-        // Then, highlight the selected group
-        for i in 0..<nodes.count {
-            if nodes[i].group == group {
-                nodes[i].highlighted = true
-            }
-        }
-        for i in 0..<connections.count {
-            if connections[i].group == group {
-                connections[i].highlighted = true
+            for i in 0..<connections.count {
+                if connections[i].group == group {
+                    connections[i].highlighted = true
+                }
             }
         }
     }
-}
 
-struct Connection: Identifiable, Hashable {
-    let id = UUID()
-    let startIndex: Int
-    let endIndex: Int
-    var highlighted: Bool = false  // Initially not highlighted
-    var group: Int? = nil
-    var color: Color {
-        group != nil ? Color(hex: "#BDBDBD") : Color(hex: "#7C8C98")
+    struct Connection: Identifiable, Hashable {
+        let id = UUID()
+        let startIndex: Int
+        let endIndex: Int
+        var highlighted: Bool = false  // Initially not highlighted
+        var group: Int? = nil
+        var color: Color {
+            group != nil ? Color(hex: "#BDBDBD") : Color(hex: "#7C8C98")
+        }
     }
-}
-
 
 extension Color {
     static let lightGray = Color(white: 0.8)
 }
 
 struct BrainView_Previews: PreviewProvider {
+    @State static var selectedGroup: Int? = nil
+
     static var previews: some View {
-        BrainView()
+        BrainView(selectedGroup: $selectedGroup)
     }
 }

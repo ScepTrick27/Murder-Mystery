@@ -19,6 +19,8 @@
 		21645E352C23082C00C8DCDE /* BrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E342C23082C00C8DCDE /* BrainView.swift */; };
 		21645E372C2309C100C8DCDE /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E362C2309C100C8DCDE /* IndexView.swift */; };
 		21645E392C2462A900C8DCDE /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E382C2462A900C8DCDE /* ColorExtensions.swift */; };
+		21645E4B2C28D68900C8DCDE /* JackBlackLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E4A2C28D68900C8DCDE /* JackBlackLocationView.swift */; };
+		21645E4D2C28DBA600C8DCDE /* JackBlackMotiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21645E4C2C28DBA600C8DCDE /* JackBlackMotiveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		21645E472C248BF100C8DCDE /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
 		21645E482C248BF100C8DCDE /* Orbitron-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-ExtraBold.ttf"; sourceTree = "<group>"; };
 		21645E492C248BF100C8DCDE /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Black.ttf"; sourceTree = "<group>"; };
+		21645E4A2C28D68900C8DCDE /* JackBlackLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBlackLocationView.swift; sourceTree = "<group>"; };
+		21645E4C2C28DBA600C8DCDE /* JackBlackMotiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBlackMotiveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				21645E342C23082C00C8DCDE /* BrainView.swift */,
 				21645E362C2309C100C8DCDE /* IndexView.swift */,
 				21645E302C21FBBD00C8DCDE /* NodeView.swift */,
+				21645E4A2C28D68900C8DCDE /* JackBlackLocationView.swift */,
+				21645E4C2C28DBA600C8DCDE /* JackBlackMotiveView.swift */,
 				21645E322C21FBD200C8DCDE /* PuzzleView.swift */,
 				21645E0A2C21FB9B00C8DCDE /* Assets.xcassets */,
 				21645E0C2C21FB9B00C8DCDE /* Preview Content */,
@@ -294,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21645E4B2C28D68900C8DCDE /* JackBlackLocationView.swift in Sources */,
 				21645E332C21FBD200C8DCDE /* PuzzleView.swift in Sources */,
 				21645E372C2309C100C8DCDE /* IndexView.swift in Sources */,
+				21645E4D2C28DBA600C8DCDE /* JackBlackMotiveView.swift in Sources */,
 				21645E092C21FB9900C8DCDE /* ContentView.swift in Sources */,
 				21645E392C2462A900C8DCDE /* ColorExtensions.swift in Sources */,
 				21645E072C21FB9900C8DCDE /* MapBrainApp.swift in Sources */,

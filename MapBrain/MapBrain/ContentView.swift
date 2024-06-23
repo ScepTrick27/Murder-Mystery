@@ -4,9 +4,13 @@
 //
 //  Created by Mirena Veleva on 18/06/2024.
 //
+// ContentView.swift
+
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedGroup: Int? = nil  // Track the selected group
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -27,7 +31,7 @@ struct ContentView: View {
                     GeometryReader { geometry in
                         ZStack {
                             // Brain View
-                            BrainView()
+                            BrainView(selectedGroup: $selectedGroup)  // Provide the binding
                                 .scaleEffect(0.8) // Scale down the BrainView
                                 .offset(y: -140)
                                 .offset(x: -410)
@@ -67,17 +71,19 @@ struct ContentView: View {
                                     Spacer()
 
                                     // Continue Button
-                                    NavigationLink(destination: PuzzleView(onPuzzleSolved: {
-                                        // Handle puzzle solved action
-                                    })) {
-                                        Text("CONTINUE >")
-                                            .font(.custom("Orbitron-ExtraBold", size: 30))
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Color.blue)
-                                            .shadow(radius: 5)
+                                    if let selectedGroup = selectedGroup {
+                                        NavigationLink(
+                                            destination: destinationView(for: selectedGroup)
+                                        ) {
+                                            Text("CONTINUE >")
+                                                .font(.custom("Orbitron-ExtraBold", size: 30))
+                                                .foregroundColor(.white)
+                                                .padding()
+                                                .background(Color.blue)
+                                                .shadow(radius: 5)
+                                        }
+                                        .padding(.top, 20)
                                     }
-                                    .padding(.top, 20)
                                 }
 
                                 Spacer()
@@ -91,6 +97,17 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Ensure proper navigation style for different devices
+    }
+
+    @ViewBuilder
+    private func destinationView(for group: Int) -> some View {
+        if group == 3 {
+            JackBlackLocationView()
+        } else if group == 1 {
+            JackBlackMotiveView()
+        } else {
+            Text("Unknown Group") // Default case if needed
+        }
     }
 }
 
