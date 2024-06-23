@@ -4,12 +4,11 @@
 //
 //  Created by Mirena Veleva on 18/06/2024.
 //
-
 import SwiftUI
 
 struct PuzzleView: View {
     var onPuzzleSolved: () -> Void
-    
+
     var body: some View {
         VStack {
             Text("Solve the Puzzle")

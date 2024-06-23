@@ -9,14 +9,15 @@ import SwiftUI
 
 struct NodeView: View {
     var node: NodeModel
-    var onSelected: (() -> Void)?
-    
+    var selectedGroup: Int?
+    var onTap: () -> Void
+
     var body: some View {
         Circle()
-            .fill(node.highlighted ? Color.blue : Color.gray)
+            .fill((node.highlighted && (selectedGroup == nil || node.group == selectedGroup)) ? .blue : node.color)
             .frame(width: node.size, height: node.size)
             .onTapGesture {
-                onSelected?()
+                onTap()
             }
     }
 }
@@ -28,12 +29,9 @@ struct NodeModel: Identifiable {
     var isLocked: Bool = true
     var highlighted: Bool = false
     var group: Int? = nil  
+    var color: Color {
+            group != nil ? Color(hex: "#BDBDBD") : Color(hex: "#7C8C98")
+        }
 }
 
-struct NodeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NodeView(node: NodeModel(position: CGPoint(x: 0, y: 0), highlighted: true))
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+
