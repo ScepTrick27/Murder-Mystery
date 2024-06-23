@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct NodeView: View {
-    @State var node: NodeModel
+    var node: NodeModel
     var onSelected: (() -> Void)?
     
     var body: some View {
         Circle()
-            .fill(node.isLocked ? Color.gray : Color.blue)
+            .fill(node.highlighted ? Color.blue : Color.gray)
             .frame(width: node.size, height: node.size)
             .onTapGesture {
                 onSelected?()
@@ -21,8 +21,19 @@ struct NodeView: View {
     }
 }
 
+struct NodeModel: Identifiable {
+    let id = UUID()
+    var position: CGPoint
+    var size: CGFloat = 40
+    var isLocked: Bool = true
+    var highlighted: Bool = false
+    var group: Int? = nil  
+}
+
 struct NodeView_Previews: PreviewProvider {
     static var previews: some View {
-        NodeView(node: NodeModel(position: CGPoint(x: 0, y: 0)))
+        NodeView(node: NodeModel(position: CGPoint(x: 0, y: 0), highlighted: true))
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }
