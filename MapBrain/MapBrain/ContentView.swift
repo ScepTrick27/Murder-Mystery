@@ -23,7 +23,7 @@ struct ContentView: View {
                 VStack {
                     // Title
                     Text("PICK YOUR PATH")
-                        .font(.custom("Orbitron-Regular", size: 100))
+                        .font(.custom("Orbitron-Bold", size: 100))
                         .foregroundColor(Color(hex: "#78CCE2"))
                         .padding(.top, 40)
                         .padding(.bottom, 20)
@@ -79,7 +79,7 @@ struct ContentView: View {
                                                 .font(.custom("Orbitron-ExtraBold", size: 30))
                                                 .foregroundColor(.white)
                                                 .padding()
-                                                .background(Color.blue)
+                                                .background(Color(hex: "#78CCE2").opacity(0.2))
                                                 .shadow(radius: 5)
                                         }
                                         .padding(.top, 20)

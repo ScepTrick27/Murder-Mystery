@@ -29,14 +29,14 @@ struct JackBlackLocationView: View {
                     
                     // Title
                     Text("JACK BLACK - Location")
-                        .font(.custom("Orbitron-Regular", size: 97))
+                        .font(.custom("Orbitron-ExtraBold", size: 90))
                         .foregroundColor(Color(hex: "#78CCE2"))
                         .padding(.bottom, 40)
                     
                     // Instructions
                     VStack(alignment: .leading, spacing: 10) {
                         Text("INSTRUCTIONS")
-                            .font(.custom("Orbitron-Regular", size: 34))
+                            .font(.custom("Orbitron-Bold", size: 34))
                             .foregroundColor(.white)
                             .padding(.bottom, 50.0)
                             .frame(maxWidth: .infinity, alignment: .center) // Center align the header
