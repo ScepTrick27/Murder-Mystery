@@ -11,6 +11,9 @@
 		A2BE671B2C2A303800302125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE671A2C2A303800302125 /* ContentView.swift */; };
 		A2BE671D2C2A303B00302125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BE671C2C2A303B00302125 /* Assets.xcassets */; };
 		A2BE67202C2A303B00302125 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BE671F2C2A303B00302125 /* Preview Assets.xcassets */; };
+		A2BE67312C2B0EA800302125 /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE67302C2B0EA800302125 /* MemoriesView.swift */; };
+		A2BE67352C2B1CC600302125 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE67342C2B1CC600302125 /* InformationView.swift */; };
+		A2BE673D2C2B333600302125 /* ReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE673C2C2B333600302125 /* ReusableViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,11 @@
 		A2BE671A2C2A303800302125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2BE671C2C2A303B00302125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2BE671F2C2A303B00302125 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A2BE67262C2A4C1B00302125 /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Regular.ttf"; path = "../../../../Downloads/Orbitron/static/Orbitron-Regular.ttf"; sourceTree = "<group>"; };
+		A2BE67272C2A4C3A00302125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A2BE67302C2B0EA800302125 /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
+		A2BE67342C2B1CC600302125 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		A2BE673C2C2B333600302125 /* ReusableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,14 @@
 		A2BE67172C2A303800302125 /* Project-MM */ = {
 			isa = PBXGroup;
 			children = (
+				A2BE67272C2A4C3A00302125 /* Info.plist */,
 				A2BE67182C2A303800302125 /* Project_MMApp.swift */,
 				A2BE671A2C2A303800302125 /* ContentView.swift */,
 				A2BE671C2C2A303B00302125 /* Assets.xcassets */,
 				A2BE671E2C2A303B00302125 /* Preview Content */,
+				A2BE67302C2B0EA800302125 /* MemoriesView.swift */,
+				A2BE67342C2B1CC600302125 /* InformationView.swift */,
+				A2BE673C2C2B333600302125 /* ReusableViews.swift */,
 			);
 			path = "Project-MM";
 			sourceTree = "<group>";
@@ -63,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A2BE671F2C2A303B00302125 /* Preview Assets.xcassets */,
+				A2BE67262C2A4C1B00302125 /* Orbitron-Regular.ttf */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -138,7 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2BE671B2C2A303800302125 /* ContentView.swift in Sources */,
+				A2BE67352C2B1CC600302125 /* InformationView.swift in Sources */,
+				A2BE673D2C2B333600302125 /* ReusableViews.swift in Sources */,
 				A2BE67192C2A303800302125 /* Project_MMApp.swift in Sources */,
+				A2BE67312C2B0EA800302125 /* MemoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +291,7 @@
 				DEVELOPMENT_TEAM = H8Z5H3GW39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project-MM/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +321,7 @@
 				DEVELOPMENT_TEAM = H8Z5H3GW39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project-MM/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
