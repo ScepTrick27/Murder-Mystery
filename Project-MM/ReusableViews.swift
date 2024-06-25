@@ -1,11 +1,9 @@
-//
 //  ReusableViews.swift
 //  Project-MM
 //
 //  Created by Kyle Osei on 25/06/2024.
 //
 
-// ReusableViews.swift
 import SwiftUI
 
 struct TimerView: View {
@@ -19,9 +17,7 @@ struct TimerView: View {
         }
         .foregroundColor(Color(hex: "#0FFFFF"))
         .padding()
-        .background(Color(hex: "#003543"))
-        .cornerRadius(8)
-        .shadow(color: Color(hex: "#0FFFFF").opacity(0.5), radius: 10, x: 0, y: 0)
+        .background(Color(hex: "#78CCE2").opacity(0.2))
     }
 }
 
@@ -45,19 +41,29 @@ struct LivesView: View {
 }
 
 struct VerticalMenu: View {
+    @Binding var currentView: String
+
     var body: some View {
         VStack(spacing: 15) {
-            NavigationLink(destination: MapView()) {
-                CircularButton(label: "Map", systemImage: "map", bgColor: Color(hex: "#0E1D21"))
+            Button(action: {
+                currentView = "Map"
+            }) {
+                CircularButton(label: "Map", systemImage: "map", bgColor: currentView == "Map" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
             }
-            NavigationLink(destination: MemoryView()) {
-                CircularButton(label: "Memory View", systemImage: "iphone", bgColor: Color(hex: "#0E1D21"))
+            Button(action: {
+                currentView = "Memory"
+            }) {
+                CircularButton(label: "Memory View", systemImage: "iphone", bgColor: currentView == "Memory" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
             }
-            NavigationLink(destination: EvidenceView()) {
-                EvidenceButton()
+            Button(action: {
+                currentView = "Evidence"
+            }) {
+                EvidenceButton(bgColor: currentView == "Evidence" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
             }
-            NavigationLink(destination: InformationView()) {
-                CircularButton(label: "Info", systemImage: "info.circle", bgColor: Color(hex: "#0E1D21"))
+            Button(action: {
+                currentView = "Info"
+            }) {
+                CircularButton(label: "Info", systemImage: "info.circle", bgColor: currentView == "Info" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
             }
         }
         .padding(.leading, 8)
@@ -70,45 +76,42 @@ struct CircularButton: View {
     var bgColor: Color
 
     var body: some View {
-        Button(action: {
-            // Action for button
-        }) {
-            VStack {
-                ZStack {
-                    Circle()
-                        .fill(bgColor)
-                        .frame(width: 50, height: 50)
-                    Image(systemName: systemImage)
-                        .foregroundColor(Color(hex: "#0FFFFF"))
-                }
-                Text(label)
-                    .foregroundColor(Color.white)
-                    .font(.caption)
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(bgColor)
+                    .frame(width: 50, height: 50)
+                Image(systemName: systemImage)
+                    .foregroundColor(Color(hex: "#0FFFFF"))
             }
+            Text(label)
+                .foregroundColor(Color.white)
+                .font(.caption)
         }
         .padding(.horizontal, 4)
     }
 }
 
 struct EvidenceButton: View {
+    var bgColor: Color
+
     var body: some View {
-        Button(action: {
-            // Action for button
-        }) {
-            VStack {
-                ZStack {
-                    Circle()
-                        .fill(Color(hex: "#0FFFFF"))
-                        .frame(width: 50, height: 50)
-                    Image(systemName: "tray.full")
-                        .foregroundColor(Color(hex: "#003D4D"))
-                }
-                Text("Evidence")
-                    .foregroundColor(Color(hex: "#0FFFFF"))
-                    .font(.caption)
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(bgColor)
+                    .frame(width: 50, height: 50)
+                Image(systemName: "tray.full")
+                    .foregroundColor(Color(hex: "#003D4D"))
             }
+            Text("Evidence")
+                .foregroundColor(Color(hex: "#0FFFFF"))
+                .font(.caption)
         }
         .padding(.horizontal, 4)
     }
 }
 
+#Preview {
+    VerticalMenu(currentView: .constant("Evidence"))
+}

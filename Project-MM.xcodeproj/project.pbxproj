@@ -14,6 +14,7 @@
 		A2BE67312C2B0EA800302125 /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE67302C2B0EA800302125 /* MemoriesView.swift */; };
 		A2BE67352C2B1CC600302125 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE67342C2B1CC600302125 /* InformationView.swift */; };
 		A2BE673D2C2B333600302125 /* ReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE673C2C2B333600302125 /* ReusableViews.swift */; };
+		A2BE673F2C2B6A6200302125 /* CommonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE673E2C2B6A6200302125 /* CommonLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A2BE67302C2B0EA800302125 /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
 		A2BE67342C2B1CC600302125 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		A2BE673C2C2B333600302125 /* ReusableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViews.swift; sourceTree = "<group>"; };
+		A2BE673E2C2B6A6200302125 /* CommonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 		A2BE670C2C2A303800302125 = {
 			isa = PBXGroup;
 			children = (
+				A2BE673E2C2B6A6200302125 /* CommonLayout.swift */,
 				A2BE67172C2A303800302125 /* Project-MM */,
 				A2BE67162C2A303800302125 /* Products */,
 			);
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BE673F2C2B6A6200302125 /* CommonLayout.swift in Sources */,
 				A2BE671B2C2A303800302125 /* ContentView.swift in Sources */,
 				A2BE67352C2B1CC600302125 /* InformationView.swift in Sources */,
 				A2BE673D2C2B333600302125 /* ReusableViews.swift in Sources */,

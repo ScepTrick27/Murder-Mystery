@@ -10,31 +10,17 @@ import SwiftUI
 struct InformationView: View {
     var body: some View {
         ZStack {
-            // Background Image
-            Image("background-01")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+//            // Background Image
+//            Image("background-01")
+//                .resizable()
+//                .scaledToFill()
+//                .edgesIgnoringSafeArea(.all)
 
             VStack {
-                // Timer and Lives
-                HStack {
-                    Spacer()
-                    LivesView(lives: 2)
-                    TimerView(time: "2:45")
-                        .padding(10)
-                }
-                .padding()
-
                 Spacer()
 
                 // Information Content
                 HStack(alignment: .top) {
-                    // Vertical Menu
-                    VerticalMenu()
-                        .padding(.leading)
-                        .padding(.top, 50)
-                    
                     // Nodes Image
                     Image("nodes") // Placeholder image
                         .resizable()
@@ -64,9 +50,6 @@ struct InformationView: View {
     }
 }
 
-
-
 #Preview {
     InformationView()
 }
-

@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var timerCount = 165
     @State private var lives = 2
     @State private var timer: Timer?
+    @State private var currentView: String = "Home"
 
     var body: some View {
         ZStack {
@@ -52,42 +53,23 @@ struct ContentView: View {
 
                 HStack(spacing: 8) {
                     // Left side buttons
-                    VerticalMenu()
+                    VerticalMenu(currentView: $currentView)
                         .padding(.leading, 8)
 
-                    // Evidence Pile Section
+                    // Main Content
                     VStack {
-                        Text("EVIDENCE PILE")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .padding(.bottom, 10)
-                            .frame(maxWidth: .infinity, alignment: .center)
-
-                        VStack(spacing: 10) {
-                            ForEach(0..<2) { rowIndex in
-                                HStack(spacing: 10) {
-                                    ForEach(0..<3) { colIndex in
-                                        evidenceBox(for: rowIndex * 3 + colIndex)
-                                    }
-                                }
-                            }
+                        if currentView == "Home" {
+                            homeContent
+                        } else if currentView == "Map" {
+                            MapView()
+                        } else if currentView == "Memory" {
+                            MemoriesView()
+                        } else if currentView == "Evidence" {
+                            evidenceContent
+                        } else if currentView == "Info" {
+                            InformationView()
                         }
-                        .padding([.leading, .trailing], 8)
-
-                        Button(action: {
-                            isEditing.toggle()
-                        }) {
-                            Label(isEditing ? "DONE" : "EDIT", systemImage: isEditing ? "checkmark" : "pencil")
-                                .padding()
-                                .frame(width: 200, height: 50)
-                                .background(isEditing ? Color.green : Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                                .font(.headline)
-                        }
-                        .padding(.top, 20)
                     }
-                    .padding(.leading, 8)
 
                     Spacer()
                 }
@@ -96,6 +78,76 @@ struct ContentView: View {
             }
         }
         .onAppear(perform: startTimer)
+    }
+
+    var homeContent: some View {
+        VStack {
+            Text("EVIDENCE PILE")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity, alignment: .center)
+
+            VStack(spacing: 10) {
+                ForEach(0..<2) { rowIndex in
+                    HStack(spacing: 10) {
+                        ForEach(0..<3) { colIndex in
+                            evidenceBox(for: rowIndex * 3 + colIndex)
+                        }
+                    }
+                }
+            }
+            .padding([.leading, .trailing], 8)
+
+            Button(action: {
+                isEditing.toggle()
+            }) {
+                Label(isEditing ? "DONE" : "EDIT", systemImage: isEditing ? "checkmark" : "pencil")
+                    .padding()
+                    .frame(width: 200, height: 50)
+                    .background(isEditing ? Color.green : Color.cyan)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .font(.headline)
+            }
+            .padding(.top, 20)
+        }
+        .padding(.leading, 8)
+    }
+
+    var evidenceContent: some View {
+        VStack {
+            Text("EVIDENCE PILE")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity, alignment: .center)
+
+            VStack(spacing: 10) {
+                ForEach(0..<2) { rowIndex in
+                    HStack(spacing: 10) {
+                        ForEach(0..<3) { colIndex in
+                            evidenceBox(for: rowIndex * 3 + colIndex)
+                        }
+                    }
+                }
+            }
+            .padding([.leading, .trailing], 8)
+
+            Button(action: {
+                isEditing.toggle()
+            }) {
+                Label(isEditing ? "DONE" : "EDIT", systemImage: isEditing ? "checkmark" : "pencil")
+                    .padding()
+                    .frame(width: 200, height: 50)
+                    .background(isEditing ? Color.green : Color.cyan)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .font(.headline)
+            }
+            .padding(.top, 20)
+        }
+        .padding(.leading, 8)
     }
 
     var timerFormatted: String {
@@ -167,15 +219,6 @@ struct EvidenceView: View {
 }
 
 
-struct VerticalLabelStyle: LabelStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            configuration.icon
-            configuration.title
-        }
-    }
-}
-
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -211,4 +254,3 @@ extension Array {
         return indices.contains(index) ? self[index] : nil
     }
 }
-
