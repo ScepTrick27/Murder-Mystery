@@ -1,4 +1,4 @@
-# Murder Mystery Project
+# evidence-piles
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.fhict.nl/I499804/murder-mystery-project.git
+git remote add origin https://git.fhict.nl/I499804/evidence-piles.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.fhict.nl/I499804/murder-mystery-project/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.fhict.nl/I499804/evidence-piles/-/settings/integrations)
 
 ## Collaborate with your team
 
