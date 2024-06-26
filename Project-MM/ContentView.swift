@@ -33,7 +33,8 @@ struct ContentView: View {
                             Image(systemName: "arrow.left")
                             Text("EXIT CHIP")
                         }
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color(hex: "#0FFFFF"))
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     }
 
                     Spacer()
@@ -61,7 +62,7 @@ struct ContentView: View {
                         if currentView == "Home" {
                             homeContent
                         } else if currentView == "Map" {
-                            MapView()
+                            MapViewWrapper()
                         } else if currentView == "Memory" {
                             MemoriesViewWrapper()
                         } else if currentView == "Evidence" {
@@ -200,9 +201,9 @@ struct ContentView: View {
     }
 }
 
-struct MapView: View {
+struct MapViewWrapper: View {
     var body: some View {
-        Text("Map View")
+        MapView()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .foregroundColor(.white)
             .edgesIgnoringSafeArea(.all)
@@ -239,7 +240,7 @@ struct InformationViewWrapper: View {
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int = UInt64()
+        var int: UInt64 = 0
         Scanner(string: hex).scanHexInt64(&int)
         let a, r, g, b: UInt64
         switch hex.count {

@@ -48,22 +48,22 @@ struct VerticalMenu: View {
             Button(action: {
                 currentView = "Map"
             }) {
-                CircularButton(label: "Map", systemImage: "map", bgColor: currentView == "Map" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
+                CircularButton(label: "Map", systemImage: "map", bgColor: currentView == "Map" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"), fgColor: currentView == "Map" ? Color(hex: "#0E1D21") : Color(hex: "#0FFFFF"))
             }
             Button(action: {
                 currentView = "Memory"
             }) {
-                CircularButton(label: "Memory View", systemImage: "iphone", bgColor: currentView == "Memory" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
+                CircularButton(label: "Memory View", systemImage: "iphone", bgColor: currentView == "Memory" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"), fgColor: currentView == "Memory" ? Color(hex: "#0E1D21") : Color(hex: "#0FFFFF"))
             }
             Button(action: {
                 currentView = "Evidence"
             }) {
-                EvidenceButton(bgColor: currentView == "Evidence" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
+                CircularButton(label: "Evidence", systemImage: "tray.full", bgColor: currentView == "Evidence" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"), fgColor: currentView == "Evidence" ? Color(hex: "#0E1D21") : Color(hex: "#0FFFFF"))
             }
             Button(action: {
                 currentView = "Info"
             }) {
-                CircularButton(label: "Info", systemImage: "info.circle", bgColor: currentView == "Info" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"))
+                CircularButton(label: "Info", systemImage: "info.circle", bgColor: currentView == "Info" ? Color(hex: "#0FFFFF") : Color(hex: "#0E1D21"), fgColor: currentView == "Info" ? Color(hex: "#0E1D21") : Color(hex: "#0FFFFF"))
             }
         }
         .padding(.leading, 8)
@@ -74,6 +74,7 @@ struct CircularButton: View {
     var label: String
     var systemImage: String
     var bgColor: Color
+    var fgColor: Color
 
     var body: some View {
         VStack {
@@ -82,30 +83,10 @@ struct CircularButton: View {
                     .fill(bgColor)
                     .frame(width: 50, height: 50)
                 Image(systemName: systemImage)
-                    .foregroundColor(Color(hex: "#0FFFFF"))
+                    .foregroundColor(fgColor)
             }
             Text(label)
                 .foregroundColor(Color.white)
-                .font(.caption)
-        }
-        .padding(.horizontal, 4)
-    }
-}
-
-struct EvidenceButton: View {
-    var bgColor: Color
-
-    var body: some View {
-        VStack {
-            ZStack {
-                Circle()
-                    .fill(bgColor)
-                    .frame(width: 50, height: 50)
-                Image(systemName: "tray.full")
-                    .foregroundColor(Color(hex: "#003D4D"))
-            }
-            Text("Evidence")
-                .foregroundColor(Color(hex: "#0FFFFF"))
                 .font(.caption)
         }
         .padding(.horizontal, 4)
