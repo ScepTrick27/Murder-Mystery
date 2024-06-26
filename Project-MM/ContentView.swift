@@ -1,3 +1,4 @@
+//
 //  ContentView.swift
 //  Project-MM
 //
@@ -6,85 +7,92 @@
 
 import SwiftUI
 
+// This struct defines the main content view of the app.
 struct ContentView: View {
-    @State private var evidence = ["img1", "img2", "", "", "", ""]
-    @State private var isEditing = false
-    @State private var timerCount = 165
-    @State private var lives = 2
-    @State private var timer: Timer?
-    @State private var currentView: String = "Home"
+    @State private var evidence = ["img1", "img2", "", "", "", ""] // An array to store evidence images.
+    @State private var isEditing = false // A state variable to track if the user is in editing mode.
+    @State private var timerCount = 165 // A state variable for the timer count in seconds.
+    @State private var lives = 2 // A state variable for the number of lives.
+    @State private var timer: Timer? // A timer to count down the timerCount.
+    @State private var currentView: String = "Home" // A state variable to track the current view being displayed.
 
     var body: some View {
-        ZStack {
-            // Background Image
-            Image("background-01")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+        GeometryReader { geometry in // Provides access to the size of the parent view.
+            ZStack {
+                // Background Image
+                Image("background-01")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all) // Ensures the background image covers the entire screen.
 
-            VStack(spacing: 10) {
-                // Top Bar
-                HStack {
-                    // Exit Chip button
-                    Button(action: {
-                        // Action for exit button
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.left")
-                            Text("EXIT CHIP")
+                VStack(spacing: 0) {
+                    // Top Bar
+                    HStack {
+                        // Exit Chip button
+                        Button(action: {
+                            // Action for exit button
+                        }) {
+                            HStack {
+                                Image(systemName: "arrow.left")
+                                Text("EXIT CHIP")
+                            }
+                            .foregroundColor(Color(hex: "#0FFFFF")) // Sets the text and icon color.
+                            .font(.custom("Orbitron-Regular", size: 24)) // Sets a custom font.
+                            .padding(25)
                         }
-                        .foregroundColor(Color(hex: "#0FFFFF"))
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+
+                        Spacer()
+
+                        // Lives and Timer
+                        HStack(spacing: 20) {
+                            LivesView(lives: lives) // Custom view to display lives.
+                            TimerView(time: timerFormatted) // Custom view to display the timer.
+                                .padding(20)
+                        }
+                        .padding(20)
                     }
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 10)
 
                     Spacer()
 
-                    // Lives and Timer
-                    HStack(spacing: 20) {
-                        LivesView(lives: lives)
-                        TimerView(time: timerFormatted)
-                            .padding(20)
-                    }
-                    .padding(20)
-                }
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 10)
+                    HStack(spacing: 8) {
+                        // Left side buttons
+                        VerticalMenu(currentView: $currentView) // Custom view for the vertical menu.
+                            .padding(.leading, 8)
 
-                Spacer()
-
-                HStack(spacing: 8) {
-                    // Left side buttons
-                    VerticalMenu(currentView: $currentView)
-                        .padding(.leading, 8)
-
-                    // Main Content
-                    VStack {
-                        if currentView == "Home" {
-                            homeContent
-                        } else if currentView == "Map" {
-                            MapViewWrapper()
-                        } else if currentView == "Memory" {
-                            MemoriesViewWrapper()
-                        } else if currentView == "Evidence" {
-                            evidenceContent
-                        } else if currentView == "Info" {
-                            InformationViewWrapper()
+                        // Main Content
+                        VStack {
+                            if currentView == "Home" {
+                                homeContent // Displays the home content.
+                            } else if currentView == "Map" {
+                                MapViewWrapper() // Displays the map view.
+                            } else if currentView == "Memory" {
+                                MemoriesViewWrapper() // Displays the memories view.
+                            } else if currentView == "Evidence" {
+                                evidenceContent // Displays the evidence content.
+                            } else if currentView == "Info" {
+                                InformationViewWrapper() // Displays the information view.
+                            }
                         }
+                        .transition(.identity) // Disable animations
+
+                        Spacer()
                     }
 
                     Spacer()
                 }
-
-                Spacer()
+                .frame(width: geometry.size.width, height: geometry.size.height) // Sets the frame to the size of the parent view.
             }
         }
-        .onAppear(perform: startTimer)
+        .onAppear(perform: startTimer) // Starts the timer when the view appears.
     }
 
+    // Home content view
     var homeContent: some View {
         VStack {
             Text("EVIDENCE PILE")
-                .font(.largeTitle)
+                .font(.custom("Orbitron-Regular", size: 30))
                 .foregroundColor(.white)
                 .padding(.bottom, 10)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -93,7 +101,7 @@ struct ContentView: View {
                 ForEach(0..<2) { rowIndex in
                     HStack(spacing: 10) {
                         ForEach(0..<3) { colIndex in
-                            evidenceBox(for: rowIndex * 3 + colIndex)
+                            evidenceBox(for: rowIndex * 3 + colIndex) // Calls evidenceBox for each item.
                         }
                     }
                 }
@@ -101,7 +109,7 @@ struct ContentView: View {
             .padding([.leading, .trailing], 8)
 
             Button(action: {
-                isEditing.toggle()
+                isEditing.toggle() // Toggles editing mode.
             }) {
                 Label(isEditing ? "DONE" : "EDIT", systemImage: isEditing ? "checkmark" : "pencil")
                     .padding()
@@ -109,17 +117,18 @@ struct ContentView: View {
                     .background(isEditing ? Color.green : Color.cyan)
                     .foregroundColor(.white)
                     .cornerRadius(8)
-                    .font(.headline)
+                    .font(.custom("Orbitron-Regular", size: 20))
             }
             .padding(.top, 20)
         }
         .padding(.leading, 8)
     }
 
+    // Evidence content view
     var evidenceContent: some View {
         VStack {
             Text("EVIDENCE PILE")
-                .font(.largeTitle)
+                .font(.custom("Orbitron-Regular", size: 30))
                 .foregroundColor(.white)
                 .padding(.bottom, 10)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -128,7 +137,7 @@ struct ContentView: View {
                 ForEach(0..<2) { rowIndex in
                     HStack(spacing: 10) {
                         ForEach(0..<3) { colIndex in
-                            evidenceBox(for: rowIndex * 3 + colIndex)
+                            evidenceBox(for: rowIndex * 3 + colIndex) // Calls evidenceBox for each item.
                         }
                     }
                 }
@@ -136,7 +145,7 @@ struct ContentView: View {
             .padding([.leading, .trailing], 8)
 
             Button(action: {
-                isEditing.toggle()
+                isEditing.toggle() // Toggles editing mode.
             }) {
                 Label(isEditing ? "DONE" : "EDIT", systemImage: isEditing ? "checkmark" : "pencil")
                     .padding()
@@ -144,19 +153,21 @@ struct ContentView: View {
                     .background(isEditing ? Color.green : Color.cyan)
                     .foregroundColor(.white)
                     .cornerRadius(8)
-                    .font(.headline)
+                    .font(.custom("Orbitron-Regular", size: 20))
             }
             .padding(.top, 20)
         }
         .padding(.leading, 8)
     }
 
+    // Formatter for the timer
     var timerFormatted: String {
         let minutes = timerCount / 60
         let seconds = timerCount % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
+    // View for an evidence box
     func evidenceBox(for index: Int) -> some View {
         ZStack(alignment: .topTrailing) {
             Rectangle()
@@ -190,6 +201,7 @@ struct ContentView: View {
         .padding(5)
     }
 
+    // Starts the timer
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if timerCount > 0 {
@@ -201,6 +213,7 @@ struct ContentView: View {
     }
 }
 
+// Wrapper view for the MapView
 struct MapViewWrapper: View {
     var body: some View {
         MapView()
@@ -210,6 +223,7 @@ struct MapViewWrapper: View {
     }
 }
 
+// Wrapper view for the MemoriesView
 struct MemoriesViewWrapper: View {
     var body: some View {
         MemoriesView()
@@ -219,6 +233,7 @@ struct MemoriesViewWrapper: View {
     }
 }
 
+// Wrapper view for the EvidenceView
 struct EvidenceView: View {
     var body: some View {
         Text("Evidence View")
@@ -228,6 +243,7 @@ struct EvidenceView: View {
     }
 }
 
+// Wrapper view for the InformationView
 struct InformationViewWrapper: View {
     var body: some View {
         InformationView()
@@ -237,6 +253,7 @@ struct InformationViewWrapper: View {
     }
 }
 
+// Extension to initialize Color from a hex string
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -267,6 +284,7 @@ extension Color {
     ContentView()
 }
 
+// Extension to safely access array elements
 extension Array {
     subscript(safe index: Int) -> Element? {
         return indices.contains(index) ? self[index] : nil
