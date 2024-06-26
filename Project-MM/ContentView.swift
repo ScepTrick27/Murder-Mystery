@@ -63,11 +63,11 @@ struct ContentView: View {
                         } else if currentView == "Map" {
                             MapView()
                         } else if currentView == "Memory" {
-                            MemoriesView()
+                            MemoriesViewWrapper()
                         } else if currentView == "Evidence" {
                             evidenceContent
                         } else if currentView == "Info" {
-                            InformationView()
+                            InformationViewWrapper()
                         }
                     }
 
@@ -203,21 +203,38 @@ struct ContentView: View {
 struct MapView: View {
     var body: some View {
         Text("Map View")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
-struct MemoryView: View {
+struct MemoriesViewWrapper: View {
     var body: some View {
-        Text("Memory View")
+        MemoriesView()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct EvidenceView: View {
     var body: some View {
         Text("Evidence View")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
+struct InformationViewWrapper: View {
+    var body: some View {
+        InformationView()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
 
 extension Color {
     init(hex: String) {
