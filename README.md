@@ -1,46 +1,55 @@
-Map Brain
-This BRANCH is part of the Murder Mystery game project, designed to create a map that the user can use to navigate the game.
+#Map Brain
 
-Requirements
+
+##Getting Started
+This branch is part of the Murder Mystery game project, designed to create a map that the user can use to navigate the game.
+
+##Requirements
+
 Xcode 12.0 or higher
 iOS 14.0 or higher
-Installation
+
+## Installation
+
 If you don't have Xcode installed, follow these steps:
 
-Visit Apple's Developer Website:
+1. *Visit Apple's Developer Website:*
+   - Go to [Apple's Developer website](https://developer.apple.com/xcode/).
 
-Go to Apple's Developer website.
-Download Xcode:
+2. *Download Xcode:*
+   - Download Xcode from the Mac App Store.
 
-Download Xcode from the Mac App Store.
-Install Xcode:
+3. *Install Xcode:*
+   - Follow the on-screen instructions to install Xcode.
 
-Follow the on-screen instructions to install Xcode.
-Open Xcode:
+4. *Open Xcode:*
+   - Once installed, launch Xcode.
 
-Once installed, launch Xcode.
-Setup
+## Setup
+
 Follow these steps to set up and run the project:
 
-Clone the Repository:
+1. *Clone the Repository:*
+   - Clone this repository to your local machine.
 
-Clone this repository to your local machine.
+     bash
+     git clone https://github.com/ScepTrick27/Murder-Mystery.git and switch to this branch using git checkout
+     
 
-bash git clone https://github.com/ScepTrick27/Murder-Mystery.git and switch to this branch using git checkout
+2. *Open Project in Xcode:*
+   - Open Xcode.
+   - Select File > Open... and navigate to the directory where you cloned the repository. Select the Project-MM.xcodeproj file.
 
-Open Project in Xcode:
+3. *Build and Run:*
+   - Connect your iOS device or use a simulator.
+   - Select your device or simulator from the top-left dropdown menu.
+   - Press Cmd + R or click on the play button to build and run the application.
 
-Open Xcode.
-Select File > Open... and navigate to the directory where you cloned the repository. Select the Project-MM.xcodeproj file.
-Build and Run:
+## Usage
 
-Connect your iOS device or use a simulator.
-Select your device or simulator from the top-left dropdown menu.
-Press Cmd + R or click on the play button to build and run the application.
-Usage
-Once the app is running on your device or simulator, you can start navigating the map and choose a path.
-Explore the app interface to interact with different components of the murder mystery game.
-Contact
+-Once the app is running on your device or simulator, you can start navigating the map and choose a path.
+
+##Contact
 For any questions or concerns related to this project, feel free to reach out:
 
 Name: Mirena Veleva
