@@ -1,4 +1,4 @@
-# Murder Mystery Project
+# Connect The Dots
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.fhict.nl/I499804/murder-mystery-project.git
+git remote add origin https://git.fhict.nl/I489945/connect-the-dots.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.fhict.nl/I499804/murder-mystery-project/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.fhict.nl/I489945/connect-the-dots/-/settings/integrations)
 
 ## Collaborate with your team
 
